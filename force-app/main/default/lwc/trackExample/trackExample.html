@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Track Decorator">
+        <p class="slds-p-horizontal_small">
+            Hi <b>{greetings}</b>
+        </p>
+        <div>
+            <lightning-input class="small-input label" label="Enter Your Greeting Message" name="greetings" 
+                            value={greetings} onchange={handleGreetingsChange}>
+            </lightning-input>
+        </div>
+    </lightning-card>
+</template>

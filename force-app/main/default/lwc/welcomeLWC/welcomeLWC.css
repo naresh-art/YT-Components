@@ -1,0 +1,4 @@
+.small-input {
+    width: 50%; /* Adjust the percentage as needed */
+    max-width: 300px; /* Optional: Set a maximum width */
+}

@@ -1,0 +1,22 @@
+<template>
+    <lightning-card>
+        <h3 slot="title">
+            <lightning-icon icon-name="utility:connected_apps" size="small"></lightning-icon>
+            Addition Example
+        </h3>
+
+        <p class="slds-p-horizontal_small">
+            <lightning-input label="Enter First Number" name="fnumber" value={firstNumber} onchange={handleChanges}>
+            </lightning-input>
+            <lightning-input label="Enter Last Number" name="snumber" value={secondNumber} onchange={handleChanges}>
+            </lightning-input>
+        </p>
+
+        <div slot="footer">
+            Result: {result}
+            <!-- <lightning-badge label={result}></lightning-badge> -->
+             <c-addition-result-child-api-comp parentresult={result}></c-addition-result-child-api-comp>
+        </div>
+
+    </lightning-card>
+</template>

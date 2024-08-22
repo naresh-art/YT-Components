@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Hello Wire Example with For each" icon-name="custom:custom14">
+        <ul class="slds-m-around_medium">
+            <template for:each={accountsData} for:item="account">
+                <li key={account.Id}>{account.Name}, <b>{account.Rating}</b></li>
+            </template>
+        </ul>
+    </lightning-card>
+</template>

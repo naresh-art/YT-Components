@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Maximum_Amount__c</fullName>
+    <label>Maximum Amount</label>
+    <summarizedField>Employee__c.Salary__c</summarizedField>
+    <summaryForeignKey>Employee__c.Company__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>
