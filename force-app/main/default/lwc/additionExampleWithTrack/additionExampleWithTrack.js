@@ -4,7 +4,7 @@ export default class AdditionExampleWithTrack extends LightningElement {
 
     firstNumber; //firstNumber=0;
     secondNumber; //secondNumber=0;
-    @track result;  //result=0;
+    @track result;  //result=0; 
     
     
     handleChanges(event){
