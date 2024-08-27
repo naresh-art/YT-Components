@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Create Account Using Java Script Example">
+        <lightning-input label="Account Name" value={accountName} onchange={handleNameChange}></lightning-input>
+        <lightning-input label="Account Phone" value={accountPhone} onchange={handlePhoneChange}></lightning-input>
+
+        <!-- Centered Create Button -->
+        <div class="slds-grid slds-align_absolute-center slds-m-top_small">
+            <lightning-button label="Create Account" onclick={createAccount}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

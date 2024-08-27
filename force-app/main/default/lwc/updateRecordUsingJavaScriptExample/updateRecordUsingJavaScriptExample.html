@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Update Account Example">
+        <lightning-input label="Account Name" value={accountName} onchange={handleNameChange}></lightning-input>
+        <lightning-input label="Account Phone" value={accountPhone} onchange={handlePhoneChange}></lightning-input>
+
+        <!-- Centered Update Button -->
+        <div class="slds-grid slds-align_absolute-center slds-m-top_small">
+            <lightning-button label="Update Account" onclick={updateAccount}></lightning-button>
+        </div>
+    </lightning-card>
+</template>
