@@ -2,6 +2,7 @@ import { LightningElement,track, api } from 'lwc';
 import { updateRecord } from 'lightning/uiRecordApi';
 // import { NavigationMixin } from 'lightning/navigation';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+import Account_Id from '@salesforce/schema/Account.Id';
 import NAME_FIELD from '@salesforce/schema/Account.Name';
 import PHONE_FIELD from '@salesforce/schema/Account.Phone';
 
@@ -21,7 +22,7 @@ export default class UpdateRecordUsingJavaScriptExample extends LightningElement
 
 		updateAccount() {
 			const fields = {};
-			fields['Id'] = this.recordId; // The record ID to update
+			fields[Account_Id.fieldApiName] = this.recordId; // The record ID to update
 			fields[NAME_FIELD.fieldApiName] = this.accountName;
 			fields[PHONE_FIELD.fieldApiName] = this.accountPhone;
 
@@ -30,6 +31,7 @@ export default class UpdateRecordUsingJavaScriptExample extends LightningElement
 			updateRecord(recordInput)
 				.then((account) => {
                     console.log('account::'+JSON.stringify(account));
+					console.log('account Id::'+JSON.stringify(account.id));
 					// Show success toast
 					this.dispatchEvent(
 						new ShowToastEvent({
