@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Create Contact with params using apex class" icon-name="standard:contact">
+        <div class="slds-p-around_medium">
+            <lightning-input label="First Name" value={firstName} onchange={handleFirstNameChange}>
+            </lightning-input>
+
+            <lightning-input label="Last Name" value={lastName} onchange={handleLastNameChange}>
+            </lightning-input>
+
+            <lightning-input label="Email" type="email" value={email} onchange={handleEmailChange}>
+            </lightning-input>
+            
+        </div>
+        <div slot="footer">
+            <lightning-button label="Create Contact" onclick={handleCreateContact} class="slds-m-top_medium">
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

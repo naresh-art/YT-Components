@@ -1,0 +1,21 @@
+<template>
+    <lightning-card>
+        <div slot="title">
+            <h3>
+                <lightning-icon icon-name="standard:account" size="small"></lightning-icon> 
+                Create Contcat Using Apex Class in LWC
+            </h3>
+        </div>
+        <div slot="footer">
+            <lightning-button label="Submit" onclick={handleSaveContact} variant="brand"></lightning-button>
+        </div>
+        <p class="slds-p-horizontal_small">
+            <lightning-input type="text" label="First Name" value={contactRecord.FirstName}
+                onchange={handleFirstNameChange}></lightning-input>
+            <lightning-input type="text" label="Last Name" value={contactRecord.LastName}
+                onchange={handleLastNameChange}></lightning-input>
+            <lightning-input type="text" label="Phone" value={contactRecord.Phone}
+                onchange={handlePhoneChange}></lightning-input>
+        </p>
+    </lightning-card>
+</template>
