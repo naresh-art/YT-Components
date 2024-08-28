@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="Account Search">
+        <div class="slds-m-around_medium">
+            <lightning-input type="search" label="Search Accounts" placeholder="Enter account name"
+                onchange={handleSearchKeyChange}>
+            </lightning-input>
+        </div>
+
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading"></lightning-spinner>
+        </template>
+
+        <template if:true={accounts.length}>
+            <lightning-datatable key-field="Id" data={accounts} columns={columns}>
+            </lightning-datatable>
+        </template>
+
+        <template if:true={totalRecords}>
+            <div class="slds-m-around_medium slds-grid slds-grid_align-spread">
+                <lightning-button label="Previous" onclick={handlePreviousPage} disabled={disablePrevious}>
+                </lightning-button>
+                <lightning-button label="Next" onclick={handleNextPage} disabled={disableNext}>
+                </lightning-button>
+            </div>
+            <div class="slds-text-align_center slds-m-around_small">
+                Page {currentPage} of {totalPages} ({totalRecords} Records)
+            </div>
+        </template>
+        <template if:true={isNoRecords}>
+            <div class="slds-text-align_center slds-m-around_medium">
+                No records found.
+            </div>
+        </template>
+    </lightning-card>
+</template>
