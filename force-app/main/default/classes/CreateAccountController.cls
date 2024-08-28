@@ -10,6 +10,19 @@ public with sharing class CreateAccountController {
         }
     } 
 
+    @AuraEnabled(cacheable=true)
+    public static List<String> getAccountTypePicklistValues() {
+        List<String> picklistValues = new List<String>();
+        Schema.DescribeFieldResult fieldResult = Account.Type.getDescribe();
+        List<Schema.PicklistEntry> picklistEntries = fieldResult.getPicklistValues();
+
+        for(Schema.PicklistEntry entry : picklistEntries) {
+            picklistValues.add(entry.getLabel());
+        }
+        return picklistValues;
+    }
+
+
     @AuraEnabled
     public static Contact createContact(Contact contactObj) {
         try {
