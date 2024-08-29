@@ -45,7 +45,6 @@ export default class CreateAccountwithApexClassExample extends NavigationMixin(L
     //     }
     // }
 
-
     @wire(getPicklistValues, { recordTypeId: "012000000000000AAA", fieldApiName: Account_Type })
     picklistResults({ error, data }) {
       if (data) {
