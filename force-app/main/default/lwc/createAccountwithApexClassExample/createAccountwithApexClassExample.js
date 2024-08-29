@@ -5,8 +5,11 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { NavigationMixin } from 'lightning/navigation';
 
 import Account_Name from '@salesforce/schema/Account.Name';
-import Account_Type from '@salesforce/schema/Account.Type';
+// import Account_Type from '@salesforce/schema/Account.Type';
 import Account_Phone from '@salesforce/schema/Account.Phone';
+
+import { getPicklistValues } from "lightning/uiObjectInfoApi";
+import Account_Type from "@salesforce/schema/Account.Type";
 
 export default class CreateAccountwithApexClassExample extends NavigationMixin(LightningElement) {
     // @track accountRecord = {
@@ -22,22 +25,38 @@ export default class CreateAccountwithApexClassExample extends NavigationMixin(L
     };
     @track accountTypes = [];
 
-    @wire(getAccountTypePicklistValues)
-    wiredAccountTypePicklist({ error, data }) {
-        if (data) {
-            this.accountTypes = data.map(type => ({
-                label: type,
-                value: type
-            }));
-        } else if (error) {
-            this.dispatchEvent(
-                new ShowToastEvent({
-                    title: 'Error loading Account Types',
-                    message: error.body.message,
-                    variant: 'error'
-                })
-            );
-        }
+    // @wire(getAccountTypePicklistValues)
+    // wiredAccountTypePicklist({ error, data }) {
+    //     if (data) {
+    //         console.log('picklist Values data::'+JSON.stringify(data));
+    //         this.accountTypes = data.map(type => ({
+    //             label: type,
+    //             value: type
+    //         }));
+    //         console.log('accountTypes Values data::'+JSON.stringify(this.accountTypes));
+    //     } else if (error) {
+    //         this.dispatchEvent(
+    //             new ShowToastEvent({
+    //                 title: 'Error loading Account Types',
+    //                 message: error.body.message,
+    //                 variant: 'error'
+    //             })
+    //         );
+    //     }
+    // }
+
+
+    @wire(getPicklistValues, { recordTypeId: "012000000000000AAA", fieldApiName: Account_Type })
+    picklistResults({ error, data }) {
+      if (data) {
+        console.log('picklist Values data::'+JSON.stringify(data));
+        this.accountTypes = data.values;
+        this.error = undefined;
+        console.log('accountTypes Values data::'+JSON.stringify(this.accountTypes));
+      } else if (error) {s
+        this.error = error;
+        this.accountTypes = undefined;
+      }
     }
 
     handleNameChange(event) {
@@ -46,6 +65,7 @@ export default class CreateAccountwithApexClassExample extends NavigationMixin(L
 
     handleTypeChange(event) {
         this.accountRecord.Type = event.detail.value;
+        console.log('this.accountRecord.Type ::'+this.accountRecord.Type); 
     }
 
     handlePhoneChange(event) {

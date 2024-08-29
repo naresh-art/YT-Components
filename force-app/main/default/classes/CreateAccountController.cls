@@ -19,6 +19,7 @@ public with sharing class CreateAccountController {
         for(Schema.PicklistEntry entry : picklistEntries) {
             picklistValues.add(entry.getLabel());
         }
+        System.debug('picklistValues::'+picklistValues);
         return picklistValues;
     }
 

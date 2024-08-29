@@ -1,0 +1,9 @@
+.list-first {
+    border-top: 5px solid rgb(17, 223, 37);
+    padding-top: 5px;
+  }
+  
+  .list-last {
+    border-bottom: 5px solid rgb(228, 15, 147);
+    padding-bottom: 5px;
+  }

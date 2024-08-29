@@ -12,8 +12,10 @@
         <p class="slds-p-horizontal_small">
             <lightning-input type="text" label="Account Name" value={accountRecord.Name}
                 onchange={handleNameChange}></lightning-input>
-            <lightning-combobox label="Account Type" value={accountRecord.Type} options={accountTypes}
-                onchange={handleTypeChange}>
+            <!-- <lightning-input type="text" label="Account Type" value={accountRecord.Type}
+                onchange={handleTypeChange}></lightning-input> -->
+            <lightning-combobox label="Account Type" value={accountRecord.Type} placeholder="Select Account Type"
+                options={accountTypes} onchange={handleTypeChange}>
             </lightning-combobox>
             <lightning-input type="tel" label="Phone" value={accountRecord.Phone}
                 onchange={handlePhoneChange}></lightning-input>
