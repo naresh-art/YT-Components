@@ -92,11 +92,11 @@
             </div>
 
             <div class="slds-card__body">
-                <!-- <lightning-combobox name="recordType" label="Select Record Type" placeholder="Select Record Type"
+                <lightning-combobox name="recordType" label="Select Record Type" placeholder="Select Record Type"
                     options={recordTypes} value={selectedRecordTypeId} onchange={handleRecordTypeChange} required>
-                </lightning-combobox> -->
-                <lightning-radio-group name="recordType" label="Select Record Type" options={recordTypes}
-                    value={selectedRecordTypeId} onchange={handleRecordTypeChange} type="radio"></lightning-radio-group>
+                </lightning-combobox>
+                <!-- <lightning-radio-group name="recordType" label="Select Record Type" options={recordTypes}
+                    value={selectedRecordTypeId} onchange={handleRecordTypeChange} type="radio"></lightning-radio-group> -->
             </div>
 
             <div class="slds-card__footer">
@@ -138,9 +138,9 @@
             </div>
 
             <div class="slds-card__footer">
-                <lightning-button label="Previous" variant="brand"
+                <!-- <lightning-button label="Previous" variant="brand"
                     onclick={handleThirdScreenPrevious}></lightning-button>
-                &nbsp;&nbsp;
+                &nbsp;&nbsp; -->
                 <lightning-button label="Submit" variant="brand" onclick={handleThirdScreenSubmit}></lightning-button>
             </div>
         </template>

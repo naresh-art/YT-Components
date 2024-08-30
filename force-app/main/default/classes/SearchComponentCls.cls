@@ -7,7 +7,7 @@ public with sharing class SearchComponentCls {
 	public static List<Account> getAccounts(String actName) {
 		String keyString = '%' + actName + '%';
 		return [SELECT Id, Name, Type, Phone FROM Account
-			WHERE Name LIKE :keyString];
+			WHERE Name LIKE :keyString OR Phone LIKE :keyString];
 	}
 
 

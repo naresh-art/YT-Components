@@ -2,7 +2,7 @@ import { LightningElement, track, wire } from 'lwc';
 import getAccounts from '@salesforce/apex/SearchComponentCls.getAccounts';
 // const DELAY = 300; //it shows delay
 export default class BasicSearchComponent extends LightningElement {
-    accountName = '';
+    accountName='';
     @track accountList = [];
 
     @wire(getAccounts, { actName: '$accountName' })
