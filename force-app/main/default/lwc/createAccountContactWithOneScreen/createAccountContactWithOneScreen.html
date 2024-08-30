@@ -1,0 +1,148 @@
+<!-- <template>
+    <lightning-card>
+        <template if:true={isStepOne}>
+            <lightning-combobox name="recordType" label="Select Record Type" placeholder="Select Record Type"
+                options={recordTypes} value={selectedRecordTypeId} onchange={handleRecordTypeChange}>
+            </lightning-combobox>
+        </template>
+
+        <template if:true={isStepTwo}>
+            <lightning-input label="Account Name" value={accountName} onchange={handleAccountNameChange}>
+            </lightning-input>
+        </template>
+
+        <template if:true={isStepThree}>
+            <lightning-input label="Contact Name" value={contactName} onchange={handleContactNameChange}>
+            </lightning-input>
+        </template>
+
+        <lightning-button-group>
+            <lightning-button label="Previous" onclick={handlePrevious}></lightning-button>
+            <lightning-button label="Next" onclick={handleNext}></lightning-button>
+        </lightning-button-group>
+    </lightning-card>
+</template> -->
+
+
+
+<!-- <template>
+    <lightning-card>
+
+        <template if:true={firstScreen}>
+            <div class="slds-card__header">
+                <h2 class="slds-card__header-title">Record Type Selection</h2>
+            </div>
+
+            <div class="slds-card__body">
+                <lightning-combobox name="recordType" label="Select Record Type" placeholder="Select Record Type"
+                    options={recordTypes} value={selectedRecordTypeId} onchange={handleRecordTypeChange} required>
+                </lightning-combobox>
+            </div>
+
+            <div class="slds-card__footer">
+                <lightning-button label="Next" variant="brand" onclick={handleFirstScreenNext}></lightning-button>
+            </div>
+        </template>
+
+        <template if:true={secondScreen}>
+
+            <div class="slds-card__header">
+                <h2 class="slds-card__header-title">Company Record Creation</h2>
+            </div>
+
+            <div class="slds-card__body">
+                <lightning-input label="Company Name" value={companyName} onchange={handleCompanyNameChange} required>
+                </lightning-input>
+            </div>
+
+            <div class="slds-card__footer">
+                <lightning-button label="Previous" variant="brand" onclick={handleSecondScreenPrevious}></lightning-button>
+                &nbsp;&nbsp;
+                <lightning-button label="Next" variant="brand" onclick={handleSecondScreenNext}></lightning-button>
+            </div>
+        </template>
+
+        <template if:true={thirdScreen}>
+
+            <div class="slds-card__header">
+                <h2 class="slds-card__header-title">Employee Record Creation</h2>
+            </div>
+
+            <div class="slds-card__body">
+                <lightning-input label="Employee Name" value={employeeName} onchange={handleEmployeeNameChange} required>
+                </lightning-input>
+            </div>
+
+            <div class="slds-card__footer">
+                <lightning-button label="Previous" variant="brand" onclick={handleThirdScreenPrevious}></lightning-button>
+                &nbsp;&nbsp;
+                <lightning-button label="Submit" variant="brand" onclick={handleThirdScreenSubmit}></lightning-button>
+            </div>
+        </template>
+    </lightning-card>
+</template> -->
+
+
+<template>
+    <lightning-card>
+        <!-- First Screen: Record Type Selection -->
+        <template if:true={firstScreen}>
+            <div class="slds-card__header">
+                <h2 class="slds-card__header-title">Record Type Selection</h2>
+            </div>
+
+            <div class="slds-card__body">
+                <!-- <lightning-combobox name="recordType" label="Select Record Type" placeholder="Select Record Type"
+                    options={recordTypes} value={selectedRecordTypeId} onchange={handleRecordTypeChange} required>
+                </lightning-combobox> -->
+                <lightning-radio-group name="recordType" label="Select Record Type" options={recordTypes}
+                    value={selectedRecordTypeId} onchange={handleRecordTypeChange} type="radio"></lightning-radio-group>
+            </div>
+
+            <div class="slds-card__footer">
+                <lightning-button label="Next" variant="brand" onclick={handleFirstScreenNext}></lightning-button>
+            </div>
+        </template>
+
+        <!-- Second Screen: Account Creation -->
+        <template if:true={secondScreen}>
+
+            <div class="slds-card__header">
+                <h2 class="slds-card__header-title">Company Record Creation</h2>
+            </div>
+
+            <div class="slds-card__body">
+                <lightning-input label="Company Name" value={companyName} onchange={handleCompanyNameChange} required>
+                </lightning-input>
+            </div>
+
+            <div class="slds-card__footer">
+                <lightning-button label="Previous" variant="brand"
+                    onclick={handleSecondScreenPrevious}></lightning-button>
+                &nbsp;&nbsp;
+                <lightning-button label="Next" variant="brand" onclick={handleSecondScreenNext}></lightning-button>
+            </div>
+        </template>
+
+        <!-- Third Screen: Contact Creation -->
+        <template if:true={thirdScreen}>
+
+            <div class="slds-card__header">
+                <h2 class="slds-card__header-title">Employee Record Creation</h2>
+            </div>
+
+            <div class="slds-card__body">
+                <lightning-input label="Employee Name" value={employeeName} onchange={handleEmployeeNameChange}
+                    required>
+                </lightning-input>
+            </div>
+
+            <div class="slds-card__footer">
+                <lightning-button label="Previous" variant="brand"
+                    onclick={handleThirdScreenPrevious}></lightning-button>
+                &nbsp;&nbsp;
+                <lightning-button label="Submit" variant="brand" onclick={handleThirdScreenSubmit}></lightning-button>
+            </div>
+        </template>
+    </lightning-card>
+</template>
