@@ -2,7 +2,8 @@ name: Run Scanner
 
 on:
   pull_request:
-    branches: [main]
+    branches: 
+        - Dev-Org
 
 jobs:
   scan-files:
