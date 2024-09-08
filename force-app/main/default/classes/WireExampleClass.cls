@@ -24,6 +24,7 @@ public with sharing class WireExampleClass {
             throw new AuraHandledException(e.getMessage());
         }
     }
+    /* Test Git PR*/
 
     @AuraEnabled(cacheable=true)
     public static List<Contact> getAccountRelatedContacts(String accountId){

@@ -1,0 +1,33 @@
+name: Run Scanner
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  scan-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install SFDX CLI and Scanner
+        run: |
+          npm install sfdx-cli -g
+          sfdx plugins:install @salesforce/sfdx-scanner
+
+      - name: Run Unit Tests
+        run: |
+          npm ci
+          npm run test
+
+      - name: Apex static analysis
+        uses: ./
+        with:
+          pmdconfig: .github/workflows/pmd-ruleset.xml
+          severity-threshold: 4
+          engine: pmd
+          target: tests
+          eslintconfig: .eslintrc.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
