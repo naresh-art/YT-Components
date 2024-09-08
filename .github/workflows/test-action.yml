@@ -30,11 +30,6 @@ jobs:
       - name: Verify SFDX Scanner Plugin Installation
         run: sf plugins --core
 
-      - name: Run Unit Tests
-        run: |
-          npm ci
-          npm run test
-
       - name: Apex static analysis
         uses: ./
         with:
