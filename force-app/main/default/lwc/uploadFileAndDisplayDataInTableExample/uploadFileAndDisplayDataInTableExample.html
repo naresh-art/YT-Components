@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Upload File and Display Data">
+        <div class="slds-p-around_medium">
+            <input type="file" accept=".csv" onchange={handleFileUpload} />
+            <lightning-button label="Upload" onclick={handleUpload}></lightning-button>
+        </div>
+        <template if:true={dataTableData}>
+            <lightning-datatable
+                key-field="id"
+                data={dataTableData}
+                columns={columns}
+                hide-checkbox-column>
+            </lightning-datatable>
+        </template>
+    </lightning-card>
+</template>
