@@ -3,7 +3,7 @@ name: Run Scanner
 on:
   pull_request:
     branches: 
-        - Dev-Org
+        - '**'
 
 jobs:
   scan-files:
