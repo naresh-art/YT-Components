@@ -10,6 +10,7 @@ public class WelcomeClass {
         System.debug('b value::'+b);
         System.debug('sName value::'+sName);
     }
+    
     Public void demoMethod1(){
         a=20;
         b=true;
