@@ -2,8 +2,9 @@ name: Run Scanner
 
 on:
   pull_request:
+    types: [opened,synchronize,reopened]
     branches: 
-        - Dev-Org
+        - '**'
 
 jobs:
   scan-files:
